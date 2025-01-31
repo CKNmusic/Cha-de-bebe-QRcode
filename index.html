@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem para Lua</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+        body {
+            font-family: "Playwrite IN", serif;
+            background-color: #a56cc1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .text-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            color: black;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 0;
+        }
+        p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .player {
+            margin-top: 20px;
+        }
+        .play-btn {
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 2.5em;
+            color: #a56cc1;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function togglePlay() {
+            var audio = document.getElementById("audio");
+            var button = document.getElementById("playButton");
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = "⏸";
+            } else {
+                audio.pause();
+                button.innerHTML = "▶";
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="lua.png" alt="Imagem Centralizada">
+    <div class="text-box">
+        <h1>Estamos esperando sua chegada, Lua!</h1>
+        <p>Apreciem a singela homenagem que fizemos para nossa filhinha.</p>
+    </div>
+    <div class="player">
+        <button id="playButton" class="play-btn" onclick="togglePlay()">▶</button>
+        <audio id="audio">
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+</body>
+</html>
